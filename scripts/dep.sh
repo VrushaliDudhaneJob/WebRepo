@@ -1,6 +1,12 @@
 #!/bin/bash
 set -e
-echo "deployment started"
+
+echo "Deployment started..."
+
 sudo apt update -y
-sudo apt install apache2 -y
-rm /var/www/html/
+sudo apt install -y apache2
+
+# Remove existing website files
+sudo rm -rf /var/www/html/*
+
+echo "Deployment completed."
